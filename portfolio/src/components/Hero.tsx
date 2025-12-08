@@ -78,9 +78,9 @@ export default function Hero() {
             transition={{ delay: 1.4 }}
           >
             {[
-              { icon: Github, href: "https://github.com" },
-              { icon: Linkedin, href: "https://linkedin.com" },
-              { icon: Mail, href: "mailto:contact@example.com" },
+              { icon: Github, href: "https://github.com/Sandeep-70" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/sandeep-singh-rajput" },
+              { icon: Mail, href: "mailto:sandeepsinghr644@gmail.com" },
             ].map((social, index) => (
               <motion.a
                 key={index}

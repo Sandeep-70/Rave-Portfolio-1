@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Email", icon: Mail, href: "mailto:contact@example.com" },
+  { name: "GitHub", icon: Github, href: "https://github.com/Sandeep-70" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/sandeep-singh-rajput" },
+  { name: "Email", icon: Mail, href: "mailto:sandeepsinghr644@gmail.com" },
 ];
 
 export default function Footer() {

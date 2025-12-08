@@ -2,10 +2,10 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, GraduationCap, Briefcase, User } from "lucide-react";
+import { Code2, GraduationCap, User } from "lucide-react";
+import Image from "next/image";
 
 const stats = [
-  { label: "Years Experience", value: 3, suffix: "+" },
   { label: "Projects Completed", value: 20, suffix: "+" },
   { label: "Technologies", value: 15, suffix: "+" },
   { label: "Happy Clients", value: 10, suffix: "+" },
@@ -23,12 +23,6 @@ const details = [
     title: "Education",
     description:
       "Bachelor's in Computer Science with a focus on software engineering and web technologies. Continuous learner always exploring new tech.",
-  },
-  {
-    icon: Briefcase,
-    title: "Experience",
-    description:
-      "3+ years of hands-on experience in full-stack development, working with startups and established companies to deliver high-quality software.",
   },
   {
     icon: Code2,
@@ -124,11 +118,14 @@ export default function About() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-neon-cyan via-neon-pink to-neon-green rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-500" />
               <div className="relative aspect-square bg-dark-200 rounded-lg overflow-hidden border border-neon-cyan/30">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-8xl font-display font-bold text-neon-cyan/20">
-                    SKS
-                  </div>
-                </div>
+                <Image
+                  src="/profile.jpg"
+                  alt="Portrait of Sandeep Kumar Singh"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                  priority
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4">
                   <div className="h-1 bg-dark-300 rounded overflow-hidden">

@@ -81,7 +81,7 @@ export default function Contact() {
 
             <div className="space-y-4 mb-8">
               <motion.a
-                href="mailto:contact@example.com"
+                href="mailto:sandeepsinghr644@gmail.com"
                 className="flex items-center gap-4 p-4 bg-dark-100 rounded-lg border border-dark-300 hover:border-neon-cyan/50 transition-all duration-300 group"
                 whileHover={{ x: 10 }}
               >
@@ -90,7 +90,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Email</p>
-                  <p className="text-white">contact@sandeepkumarsingh.dev</p>
+                  <p className="text-white">sandeepsinghr644@gmail.com</p>
                 </div>
               </motion.a>
 
@@ -110,10 +110,10 @@ export default function Contact() {
 
             <div className="flex gap-4">
               {[
-                { icon: Github, href: "https://github.com", color: "#00f0ff" },
+                { icon: Github, href: "https://github.com/Sandeep-70", color: "#00f0ff" },
                 {
                   icon: Linkedin,
-                  href: "https://linkedin.com",
+                  href: "https://www.linkedin.com/in/sandeep-singh-rajput",
                   color: "#ff00e1",
                 },
               ].map((social, index) => (
