@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../components/**/*.tsx";
+@source "../app/**/*.tsx";
+@source "../three/**/*.tsx";
+
+@theme {
+  --color-dark: #0a0a0f;
+  --color-dark-100: #121218;
+  --color-dark-200: #1a1a24;
+  --color-dark-300: #252532;
+  --color-neon-cyan: #00f0ff;
+  --color-neon-pink: #ff00e1;
+  --color-neon-green: #a6ff00;
+  --color-neon-purple: #9d00ff;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: 'Orbitron', sans-serif;
+}
 
 :root {
   --dark-bg: #0a0a0f;
@@ -27,7 +42,6 @@ body {
   color: #ffffff;
   font-family: 'JetBrains Mono', monospace;
   overflow-x: hidden;
-  cursor: none;
 }
 
 ::selection {
@@ -52,66 +66,64 @@ body {
   background: linear-gradient(180deg, var(--neon-pink), var(--neon-cyan));
 }
 
-@layer utilities {
-  .text-glow-cyan {
-    text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
-  }
-  
-  .text-glow-pink {
-    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
-  }
-  
-  .text-glow-green {
-    text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
-  }
-  
-  .box-glow-cyan {
-    box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), inset 0 0 10px rgba(0, 240, 255, 0.1);
-  }
-  
-  .box-glow-pink {
-    box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), inset 0 0 10px rgba(255, 0, 225, 0.1);
-  }
-  
-  .neon-border {
-    border: 1px solid var(--neon-cyan);
-    box-shadow: 0 0 5px var(--neon-cyan), inset 0 0 5px rgba(0, 240, 255, 0.1);
-  }
-  
-  .cyber-grid-bg {
-    background-image: 
-      linear-gradient(transparent 95%, rgba(0, 240, 255, 0.1) 95%),
-      linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.1) 95%);
-    background-size: 50px 50px;
-  }
-  
-  .glitch-text {
-    position: relative;
-  }
-  
-  .glitch-text::before,
-  .glitch-text::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .glitch-text::before {
-    left: 2px;
-    text-shadow: -2px 0 var(--neon-pink);
-    clip: rect(24px, 550px, 90px, 0);
-    animation: glitch-anim-1 2s infinite linear alternate-reverse;
-  }
-  
-  .glitch-text::after {
-    left: -2px;
-    text-shadow: -2px 0 var(--neon-cyan);
-    clip: rect(85px, 550px, 140px, 0);
-    animation: glitch-anim-2 2s infinite linear alternate-reverse;
-  }
+@utility text-glow-cyan {
+  text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+}
+
+@utility text-glow-pink {
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+}
+
+@utility text-glow-green {
+  text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+}
+
+@utility box-glow-cyan {
+  box-shadow: 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-cyan), inset 0 0 10px rgba(0, 240, 255, 0.1);
+}
+
+@utility box-glow-pink {
+  box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), inset 0 0 10px rgba(255, 0, 225, 0.1);
+}
+
+@utility neon-border {
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 5px var(--neon-cyan), inset 0 0 5px rgba(0, 240, 255, 0.1);
+}
+
+@utility cyber-grid-bg {
+  background-image: 
+    linear-gradient(transparent 95%, rgba(0, 240, 255, 0.1) 95%),
+    linear-gradient(90deg, transparent 95%, rgba(0, 240, 255, 0.1) 95%);
+  background-size: 50px 50px;
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--neon-pink);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--neon-cyan);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim-2 2s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-anim-1 {

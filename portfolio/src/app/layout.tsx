@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-dark text-white antialiased">
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-dark text-white antialiased" suppressHydrationWarning>
         <Preloader />
         <CustomCursor />
         <Navbar />

@@ -8,6 +8,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
   },
+  allowedDevOrigins: [
+    '*.replit.dev',
+    '*.repl.co',
+    '127.0.0.1',
+    'localhost',
+  ],
 };
 
 export default nextConfig;

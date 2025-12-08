@@ -52,7 +52,7 @@ function NeonGrid() {
   return (
     <gridHelper
       ref={gridRef}
-      args={[40, 40, "#00f0ff", "#ff00e120"]}
+      args={[40, 40, "#00f0ff", "#3d0038"]}
       position={[0, -5, 0]}
       rotation={[0, 0, 0]}
     />

@@ -1,13 +1,26 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Preloader() {
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
+  const [mounted, setMounted] = useState(false);
+
+  const particles = useMemo(() => {
+    if (typeof window === 'undefined') return [];
+    return [...Array(20)].map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      height: `${50 + Math.random() * 100}px`,
+      duration: 2 + Math.random() * 2,
+      delay: Math.random() * 2,
+    }));
+  }, []);
 
   useEffect(() => {
+    setMounted(true);
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
@@ -80,28 +93,30 @@ export default function Preloader() {
             INITIALIZING... {Math.min(Math.round(progress), 100)}%
           </motion.p>
 
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            {[...Array(20)].map((_, i) => (
-              <motion.div
-                key={i}
-                className="absolute w-px bg-gradient-to-b from-transparent via-neon-cyan/20 to-transparent"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  height: `${50 + Math.random() * 100}px`,
-                }}
-                initial={{ y: -100, opacity: 0 }}
-                animate={{
-                  y: ["0%", "100vh"],
-                  opacity: [0, 1, 0],
-                }}
-                transition={{
-                  duration: 2 + Math.random() * 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </div>
+          {mounted && (
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              {particles.map((particle) => (
+                <motion.div
+                  key={particle.id}
+                  className="absolute w-px bg-gradient-to-b from-transparent via-neon-cyan/20 to-transparent"
+                  style={{
+                    left: particle.left,
+                    height: particle.height,
+                  }}
+                  initial={{ y: -100, opacity: 0 }}
+                  animate={{
+                    y: ["0%", "100vh"],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: particle.duration,
+                    repeat: Infinity,
+                    delay: particle.delay,
+                  }}
+                />
+              ))}
+            </div>
+          )}
         </motion.div>
       )}
     </AnimatePresence>
