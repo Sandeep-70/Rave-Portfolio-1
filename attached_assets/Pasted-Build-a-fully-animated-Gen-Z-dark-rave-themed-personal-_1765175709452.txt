@@ -1,0 +1,141 @@
+Build a fully animated, Gen-Z dark rave themed personal portfolio using the following stack:
+Next.js (latest), TypeScript, Three.js, Barba.js, TailwindCSS, Framer Motion.
+
+🔧 Project Requirements
+
+Framework: Next.js + TypeScript
+
+Styling: TailwindCSS
+
+Animations: Framer Motion + Barba.js page transitions
+
+3D: Three.js (interactive 3D background or elements)
+
+Theme: Dark Rave | Neon | Cyberpunk | Gen-Z aesthetic
+
+Custom cursor + micro-interactions
+
+Smooth scroll, parallax, glitch effects, and hover animations
+
+Fast performance + SEO optimized
+
+Fully responsive (mobile → desktop)
+
+🧩 Pages / Sections to Build
+1. Landing / Hero Page
+
+My name: Sandeep Kumar Singh
+
+Title: Software Developer (Java + Web + Full Stack)
+
+Animated neon/glitch headline
+
+Three.js 3D background (particles, neon grid, or energy waves)
+
+CTA buttons: View Projects / Contact Me
+
+2. About Page
+
+Short bio
+
+Education details
+
+Experience overview
+
+Rave-theme styled profile photo frame
+
+Animated skill counters or bars
+
+3. Skills Page
+
+Grid of technical skills
+
+Categories: Frontend, Backend, Tools, Databases
+
+Hover animations + icons
+
+Three.js floating skill blobs or particles
+
+4. Projects Page
+
+6–8 project cards
+
+Each card: Title, Tech Used, Short Description, GitHub Link, Live Demo
+
+Expandable modal with deeper project info
+
+Parallax scroll + animated entry for each card
+
+5. Experience Page
+
+Timeline of internships / work
+
+Animated neon timeline with scroll reveal
+
+Badges for responsibilities + achievements
+
+6. Contact Page
+
+Contact form: Name, Email, Message
+
+Socials: GitHub, LinkedIn
+
+Glow outline form UI + success animation
+
+7. Footer
+
+Minimal neon footer
+
+“Built with Next.js & Three.js by SKS”
+
+🎨 Design Requirements
+
+Dark rave color palette: #0a0a0f, neon #00f0ff, #ff00e1, #a6ff00
+
+Cyberpunk gradients
+
+Glitch text, chromatic aberration, blur animations
+
+Custom cursor with trailing particles
+
+Page transitions using Barba.js (liquid wipe, glitch, neon fade)
+
+3D elements integrated into multiple pages
+
+High-quality micro-animations on scroll and hover
+
+📁 File/Project Structure
+
+app/ folder (Next.js app router)
+
+Components: Hero.tsx, Navbar.tsx, Footer.tsx, ProjectCard.tsx, ExperienceTimeline.tsx
+
+/three/ folder for Three.js 3D scenes
+
+/animations/ folder for Barba + Framer configs
+
+/styles/ for globals + Tailwind config
+
+⚙️ Additional Features
+
+SEO metadata for each page
+
+Preloader with glitch animation
+
+Smooth page transitions
+
+Reusable animation components
+
+High FPS + optimized Three.js scene
+
+🎯 Final Deliverables
+
+Fully working Next.js portfolio
+
+All animations + transitions implemented
+
+Fully customized dark rave Gen-Z UI
+
+Clean TypeScript code
+
+Responsive and production-ready build
